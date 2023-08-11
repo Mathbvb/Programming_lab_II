@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+float* zuordnen(int nummer){
+    float *vet = malloc(nummer * sizeof(float));
+    return vet;
+}
+
 void lesenVektor(int nummer, float* vet){
     for(int i=0;i<nummer; i++){
         printf("Schreibe einen Wert: \n");
@@ -13,7 +18,8 @@ float mittlere(int nummer, float* vet){
     for(int i=0; i<nummer; i++){
         gesamt += vet[i];
     }
-    av = gesamt / (float)(nummer - 1);
+    av = gesamt / (float)nummer;
+    printf("%f \n", av);
     return av;
 }
 
@@ -25,7 +31,8 @@ float uberdurchschnittlich(int nummer, float* vet, float av){
             ud++;
         }
     }
-    prozent = (float)ud / (float)(nummer-1);
+    printf("%d \n", ud);
+    prozent = (float)ud / (float)nummer;
 
     return prozent;
 }
@@ -35,15 +42,14 @@ int main(){
     float av, prozent;
     printf("Was ist die Vektorgrossen?\n");
     scanf("%d", &nummer);
-    float *vet = malloc(nummer * sizeof(float));
 
+    float* vet = zuordnen(nummer);
     lesenVektor(nummer, vet);
     av = mittlere(nummer, vet);
     prozent = uberdurchschnittlich(nummer, vet, av);
     prozent *= 100;
 
     printf("%.2f nummer liegen uber dem Durchschnitt. \n", prozent);
-
 
     return 0;
 }
