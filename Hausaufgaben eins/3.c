@@ -23,9 +23,9 @@ Triangulo le_triangulo(){
 }
 
 Triangulo verifica_triangulo(Triangulo t){
-    bool lA = t.ladoA > t.ladoB + t.ladoC;
-    bool lB = t.ladoB > t.ladoA + t.ladoC;
-    bool lC = t.ladoC > t.ladoA + t.ladoB;
+    bool lA = t.ladoA >= t.ladoB + t.ladoC;
+    bool lB = t.ladoB >= t.ladoA + t.ladoC;
+    bool lC = t.ladoC >= t.ladoA + t.ladoB;
     if (lA == true || lB == true || lC == true){
         t.ehTriangulo = 'n';
     }

@@ -15,8 +15,8 @@ void calc_esfera(float r, float *area, float *volume){
 }
 
 void print_esfera(float area, float volume){
-    printf("Area: %f \n", area);
-    printf("Volume: %f \n", volume);
+    printf("Area: %.2f \n", area);
+    printf("Volume: %.2f \n", volume);
 }
 
 int main(){

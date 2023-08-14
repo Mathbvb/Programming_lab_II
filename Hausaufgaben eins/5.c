@@ -27,7 +27,7 @@ void verificaAluno(Disciplina *dis){
     }
 }
 
-void EntwederGutOderSchlecht(Aluno al, int unterricht){
+void EitherGoodOrBad(Aluno al, int unterricht){
     float teilnahme, durchschnitt;
     durchschnitt = (al.nota1 + al.nota2) / 2;
     teilnahme = (float)al.aulasAssistidas / unterricht;
@@ -46,7 +46,7 @@ int main(){
     verificaAluno(&dis);
     printf("\n\n");
     for(int i=0;i<5;i++){
-        EntwederGutOderSchlecht(dis.vet[i], dis.aulasMinistradas);
+        EitherGoodOrBad(dis.vet[i], dis.aulasMinistradas);
     }
     
     return 0;
