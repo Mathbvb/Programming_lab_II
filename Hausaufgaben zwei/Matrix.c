@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "Matrix.h"
+
 void zeroAtEnd(int m, int n, char** mat){
 
     for (int i = 0; i < m; i++){
@@ -60,7 +62,7 @@ void fillMatrix(int m, int n, char** mat){
 
     for (int i = 0; i < m; i++){
         for (int j = 0; j < n; j++){
-            if ((i*n + j) > strlen(vect)){ // para não ler onde tem lixo
+            if ((i*n + j) > strlen(vect)){ 
                 mat[i][j]=' ';
             }
             
@@ -70,4 +72,15 @@ void fillMatrix(int m, int n, char** mat){
             
         }
     }
+
+    free(vect);
+    free(auxvect);
+}
+
+void freeMatrix(int m, char** mat){
+    for (int i = 0; i < m; i++)
+    {
+        free(mat[i]);
+    }
+    free(mat);
 }

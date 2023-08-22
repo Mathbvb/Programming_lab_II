@@ -5,12 +5,7 @@
 #include <stdbool.h>
 #include <string.h>
 
-struct positions{
-    int x_init;
-    int y_init;
-    int x_end;
-    int y_end;
-};
+#include "Search_words.h"
 
 char* get_word(int m, int n){
     int max_dimension;
@@ -21,10 +16,18 @@ char* get_word(int m, int n){
     else{
         max_dimension = n;
     }
-    
-    char* requested_word = (char*) malloc((max_dimension+1) * sizeof(char));
+
+    char* requested_word;
     printf("Insert the word you want to search for: ");
-    scanf("%s", requested_word);
+    scanf("%ms", &requested_word); 
+
+    while (strlen(requested_word) > max_dimension)
+    {
+        free(requested_word);
+        printf("Use a shorter word, mate!\n");
+        printf("Insert the word you want to search for: ");
+        scanf("%ms", &requested_word); 
+    }
 
     return requested_word;
 }
@@ -277,7 +280,7 @@ void find_word(int m, int n, char* requested_word, char** mat)
     {
         printf("I'm so sorry, comrade! :( \n");
         printf("I couldn't find the word you're looking for...\n");
-        printf("Please, don't rat out my wrongdoing to the chairman!\n");
+        printf("Long live to the chairman!\n");
     }
 
 }
