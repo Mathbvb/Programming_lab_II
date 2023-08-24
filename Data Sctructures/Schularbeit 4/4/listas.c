@@ -16,18 +16,26 @@ void printList(List* l){
     free(assistant);
 }
 
-int signal_inverter(int n){
-    n *= -1;
-    return n;
-}
-
-List* change_list(List* l){
-    List* assistant;
-    for(assistant = l; assistant != NULL; assistant = assistant->next){
-        assistant->info = signal_inverter(assistant->info);
-        assistant = assistant->next;
+List* erase_value(List* l, int v){
+    List* end = l;
+    while(end != NULL){
+        List* assistant = l;
+        List* back = NULL;
+        while(assistant != NULL && assistant->info != v){
+            back = assistant;
+            assistant = assistant->next;
+        }
+        if(assistant == NULL){
+            return l;
+        }
+        if(back == NULL){
+            l = assistant->next;
+        }
+        else{
+            back->next = assistant->next;
+        }
+    end = end->next;
     }
-
     return l;
 }
 
