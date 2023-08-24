@@ -9,6 +9,7 @@ int mede(Lista* l){
         i++;
         aux = aux->prox;
     }
+    free(aux);
     return i;
 }
 

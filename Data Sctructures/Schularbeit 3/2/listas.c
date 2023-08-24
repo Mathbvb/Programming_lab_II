@@ -11,6 +11,7 @@ int mede(Lista* l, int n){
         }
         aux = aux->prox;
     }
+    free(aux);
     return i;
 }
 

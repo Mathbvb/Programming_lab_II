@@ -16,21 +16,26 @@ void printList(List* l){
     free(assistant);
 }
 
-List* concatenate(List* l1, List* l2){
-    List* assistant = l1;
-    while(assistant->next != NULL){
-        assistant = assistant->next;
-    }
-    assistant->next = l2;
-
-    return l1;   
+int signal_inverter(int n){
+    n *= -1;
+    return n;
 }
 
-List* lst_create(){
+List* change_list(List* l){
+    List* assistant;
+    for(assistant = l; assistant != NULL; assistant = assistant->next){
+        assistant->info = signal_inverter(assistant->info);
+        assistant = assistant->next;
+    }
+
+    return l;
+}
+
+List* create_list(){
     return NULL;
 }
 
-List* lst_insert(List* l, int i){
+List* insert_list(List* l, int i){
     List* new = (List*) malloc(sizeof(List));
     new->info = i;
     new->next = l;
