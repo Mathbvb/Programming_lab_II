@@ -13,29 +13,52 @@ void printList(List* l){
         }
         assistant = assistant->next;
     }
+    printf("\n\n");
     free(assistant);
 }
 
-List* erase_value(List* l, int v){
-    List* end = l;
-    while(end != NULL){
-        List* assistant = l;
-        List* back = NULL;
-        while(assistant != NULL && assistant->info != v){
-            back = assistant;
-            assistant = assistant->next;
-        }
-        if(assistant == NULL){
-            return l;
-        }
-        if(back == NULL){
-            l = assistant->next;
-        }
-        else{
-            back->next = assistant->next;
-        }
-    end = end->next;
+int list_len(List* l){
+    int size = 0;
+    List* aux = l;
+    while(aux != NULL){
+        size++;
+        aux = aux->next;
     }
+
+    return size;
+}
+
+int list_content(List* l, int n){
+    List* ptr = l;
+    int count = 0;
+    int content = ptr->info;
+
+    while(count < n){
+        ptr = ptr->next;
+        count++;
+        content = ptr->info;
+    }
+
+    return content;
+}
+
+List* erase_value(List* l, int v){
+    List* aux = l;
+    List* back = NULL;
+    int count = 0;
+    
+    if(v == 0){
+        l = l->next;
+        return l;
+    }
+
+    while(count < v){
+        back = aux;
+        aux = aux->next;
+        count++;
+    }
+
+    back->next = aux->next;
     return l;
 }
 
