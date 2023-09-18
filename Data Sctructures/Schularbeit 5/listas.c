@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "listas.h"
 
 void printList(List* l){
@@ -130,5 +131,44 @@ List* insert_list(List* l, int i){
     List* new = (List*) malloc(sizeof(List));
     new->info = i;
     new->next = l;
+    return new;
+}
+
+bool compare_lists(List* l1, List* l2){
+    bool equal = true;
+    List* ptr1 = l1;
+    List* ptr2 = l2;
+
+    while(ptr1 != NULL && ptr2 != NULL){
+        if(ptr1->info != ptr2->info){
+            equal = false;
+        }
+        ptr1 = ptr1->next;
+        ptr2 = ptr2->next;
+    }
+
+    return equal;
+}
+
+List* copy_list(List* l1){
+    List* copy;
+    List* ptr = l1;
+
+    while(ptr != NULL){
+        copy = insert_list_at_end(copy, ptr->info);
+        ptr = ptr->next;
+    }
+
+    return copy;
+}
+
+List* insert_circular(List* l1, int i){
+    List* new = (List*) malloc(sizeof(List));
+
+    new->info = i;
+    new->next = l1;
+    
+    
+
     return new;
 }

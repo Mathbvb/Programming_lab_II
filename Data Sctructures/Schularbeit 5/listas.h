@@ -17,5 +17,7 @@ List* separate(List* l, int n);
 List* merge(List* l1, List* l2);
 List* insert_list_at_end(List* l, int n);
 List* invert_list(List* l);
+bool compare_lists(List* l1, List* l2);
+List* copy_list(List* l1);
 
 #endif
