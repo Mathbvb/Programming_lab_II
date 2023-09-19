@@ -66,3 +66,25 @@ void print_list(List_two* l){
     }
     printf("\n");
 }
+
+List_two* remove_back(List_two* l1, int v){
+    List_two* ptr = l1;
+    
+    if(ptr == NULL || ptr->next == NULL){
+        printf("Nao ha valor anterior para remover");
+        return l1;
+    }
+
+    while(ptr->info != v){
+        ptr = ptr->next;
+    }
+    if(ptr->ant->ant == NULL || ptr->info == v){
+        ptr->ant = NULL;
+        l1 = ptr;        
+    }
+    else if(ptr->info == v){
+        ptr->ant->ant->next = ptr;
+    }
+
+    return l1;
+}
