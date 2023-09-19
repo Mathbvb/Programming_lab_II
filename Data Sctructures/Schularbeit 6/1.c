@@ -10,6 +10,13 @@ int main(){
     hehe = insert(hehe, 1);
     hehe = insert(hehe, 2);
     hehe = insert(hehe, 3);
+    hehe = insert(hehe, 3);
+    hehe = insert(hehe, 4);
+    hehe = insert(hehe, 5);
+    hehe = insert(hehe, 6);
+    hehe = insert(hehe, 8);
+
+
 
     print_list(hehe);
 

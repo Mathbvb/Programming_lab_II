@@ -75,14 +75,29 @@ List_two* remove_back(List_two* l1, int v){
         return l1;
     }
 
-    while(ptr->info != v){
+    while(ptr->info != v && ptr != NULL){
         ptr = ptr->next;
+        if(ptr == NULL){
+            return l1;
+        }
     }
-    if(ptr->ant->ant == NULL || ptr->info == v){
+    
+
+    if(ptr->ant == NULL){
+        ptr = ptr->next;
+        while(ptr->info != v && ptr != NULL){
+            ptr = ptr->next;
+            if(ptr == NULL){
+                return l1;
+            }
+        } 
+        
+    }
+    if(ptr->ant->ant == NULL){
         ptr->ant = NULL;
         l1 = ptr;        
     }
-    else if(ptr->info == v){
+    else{
         ptr->ant->ant->next = ptr;
     }
 
