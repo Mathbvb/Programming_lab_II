@@ -52,9 +52,19 @@ bool empty_queue(Queue* q){
 }
 
 float remove_value(Queue* q){
-    float value;
-    value = q->begin->value;
-    q->begin = q->begin->next;
+    float value = 0;
+    if(empty_queue(q)){
+        printf("Nao ha valores para remover. \n");
+    }
+    else{
+        List* ptr = q->begin;
+        value = ptr->value;
+        q->begin = q->begin->next;
+        if(q->begin == NULL){
+            q->end == NULL;
+        }
+        free(ptr);
+    }
 
     return value;
 }
