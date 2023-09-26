@@ -40,7 +40,7 @@ void printlist(Lista* l){
 
 // questão 3
 
-Lista* lst_insere (Lista* l, int cpf, char* nome, int fator){
+Lista* insert(Lista* l, int cpf, char* nome, int fator){
     Lista* new = (Lista*)malloc(sizeof(Lista));
     new->cpf = cpf;
     strcpy(new->nome, nome);
@@ -48,6 +48,36 @@ Lista* lst_insere (Lista* l, int cpf, char* nome, int fator){
     new->prox = l;
 
     return new;
+}
+
+Lista* lst_insere (Lista* l, int cpf, char* nome, int fator){
+    Lista* ptr = l;
+    Lista* ant = NULL;
+
+    Lista* new = (Lista*)malloc(sizeof(Lista));
+    new->cpf = cpf;
+    new->fator = fator;
+    strcpy(new->nome, nome);
+
+    if(ptr == NULL){
+        new->prox = l;
+        return new;
+    }
+
+    while(ptr != NULL && ptr->fator < fator){
+        ant = ptr;
+        ptr = ptr->prox;
+    }
+
+    if(ant == NULL){
+        new->prox = l;
+        return new;
+    }
+    
+    ant->prox = new;
+    new->prox = ptr;
+
+    return l;
 }
 
 // questão 4
@@ -62,14 +92,13 @@ Lista* lst_remove (Lista* l, int fator){
                 if(ant == NULL){
                     l = ptr->prox;
                 }
-                else if(ptr->prox == NULL){
-                    ant->prox = NULL;
-                }
                 else{
                     ant->prox = ptr->prox;
                 }
             }
-            ant = ptr;
+            else{
+                ant = ptr;
+            }
             ptr = ptr->prox;
         }
         count++;
@@ -82,19 +111,15 @@ Lista* lst_remove (Lista* l, int fator){
 int main(){
     Lista* teste = create();
     teste = lst_insere(teste, 123, "jorge augusto",1);
-    teste = lst_insere(teste, 234, "jorge august", 1);
-    teste = lst_insere(teste, 345, "jorge augus", 1);
-    teste = lst_insere(teste, 456, "jorge augu", 1);
-    teste = lst_insere(teste, 456, "jorge augu", 1);
-    teste = lst_insere(teste, 567, "jorge aug", 1);
+    teste = lst_insere(teste, 234, "jorge august", 2);
+    teste = lst_insere(teste, 345, "jorge augus", 3);
+    teste = lst_insere(teste, 456, "jorge augu", 4);
+    teste = lst_insere(teste, 456, "jorge aug", 1);
+    teste = lst_insere(teste, 567, "jorge au", 3);
+    teste = lst_insere(teste, 567, "jorge a", 5);
+    teste = lst_insere(teste, 567, "jorge ", 2);
 
     printlist(teste);
-
-    teste = lst_remove(teste, 1);
-
-    printlist(teste);
-
-    printf("hia");
 
     return 0;
 }
