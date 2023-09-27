@@ -1,6 +1,6 @@
 ## About this project
 
-This is a program of a car rental company. The project is based in simple linked lists and is divided in 5 archives:
+This is a program of a car rental company. The project is based in simple linked lists and is divided in 5 files:
 - time (made by the teacher, not my code);
 - cars; 
 - clients;
