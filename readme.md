@@ -1,15 +1,3 @@
-<style>
-    a{
-        color: light-gray;
-    }
-    a:hover{
-        color: white;
-    }
-    a:visited:{
-        color: dark-blue;
-    }
-</style>
-
 # My works II
 
 repository made to store all works that i developed in data structures and programming lab II during my second semester at computer science.
