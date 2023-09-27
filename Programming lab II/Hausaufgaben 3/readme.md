@@ -7,4 +7,8 @@ This is a program of a car rental company. The project is based in simple linked
 - rental;
 - control.
 
-Control have the menus and control the actions of the user and is used to show some reports. Cars and clients have functions to create and control the lists and some other auxiliary functions that are used principaly at the rental. Rental have the list to allow clients to rent a car, it'll receive in it's list the pointer to the client and the car and also do some other auxiliary functions, the function that calculates the amount of the rental put the price at the month in which the client returns the car.
+Control have the menus and control the actions of the user and is used to show some reports;
+
+Cars and clients have functions to create and control the lists and some other auxiliary functions that are used principaly at the rental;
+ 
+Rental have the list to allow clients to rent a car, it'll receive in it's list the pointer to the client and the car and also do some other auxiliary functions, the function that calculates the amount of the rental put the price at the month in which the client returns the car.
