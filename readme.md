@@ -4,12 +4,14 @@ repository made to store all works that i developed in data structures and progr
 
 Maybe my naming made things a bit harder to look through;
 
+
 ## Programming lab II
 
-All works that I have here were made in group with my colleague.
+All works that I have here were made in group with my colleague (some works may lack commits, but that's because we did then at a private repository).
 
 <p>1 - <a href="https://github.com/Mathbvb/Programming_lab_II/tree/main/Programming%20lab%20II/Hausaufgaben%201">First work</a></p>
 <p>2 - <a href="https://github.com/Mathbvb/Programming_lab_II/tree/main/Programming%20lab%20II/Hausaufgaben%202">Second work</a></p>
+<p>3 - <a href="https://github.com/Mathbvb/Programming_lab_II/tree/main/Programming%20lab%20II/Hausaufgaben%203">Third work</a></p>
 
 
 ## Data Structures
