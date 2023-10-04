@@ -138,6 +138,7 @@ Rental_list* find_rental_pointer_by_index(Rental_list* lista_locacoes, int idx)
 
 void return_car(Rental_list* lista_locacoes)
 {
+    system("clear || cls");
     list_all_active_rentals(lista_locacoes);
 
     int selected_index;
@@ -163,8 +164,15 @@ void return_car(Rental_list* lista_locacoes)
     scanf("%d", &rodado);
     ptr->info.carro->info.quilometragem_atual += rodado;
 
-    ptr->info.valor_pago = ptr->info.carro->info.valor_diaria * (float)daysBetweenDates(ptr->info.data_inicio, ptr->info.data_fim);
-    printf("O valor pago foi: R$ %.2f", ptr->info.valor_pago);
+    int qnt_dias = (float)daysBetweenDates(ptr->info.data_inicio, ptr->info.data_fim);
+    if (qnt_dias == 0){
+        ptr->info.valor_pago = ptr->info.carro->info.valor_diaria;
+    }
+    else{
+        ptr->info.valor_pago = ptr->info.carro->info.valor_diaria * (float)daysBetweenDates(ptr->info.data_inicio, ptr->info.data_fim);
+    }
+
+    printf("O valor pago foi: R$ %.2f\n", ptr->info.valor_pago);
 
     ptr->info.carro->info.disponivel = true;
 }
@@ -217,6 +225,12 @@ void list_all_active_rentals_in_a_date(Rental_list* lista_locacoes, Date data_me
 
         ptr = ptr->next;
     }
+
+    if (count == 1)
+    {
+        printf("Nao ha nenhuma locacao ativa para a data informada.\n");
+    }
+    
 }
 
 void invoice_per_month(Rental_list* lista_locacoes, Date data_meio){

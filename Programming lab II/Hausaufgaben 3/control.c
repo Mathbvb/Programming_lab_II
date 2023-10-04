@@ -149,6 +149,7 @@ int main(){
             clientes = add_clients(clientes);
             break;
         case 4:
+            system("clear || cls");
             list_all_clients(clientes);
             break;
         case 5:
