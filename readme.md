@@ -29,6 +29,7 @@ Here are all the small exercises of the contents that I learned at data structur
 <p>8 - <a href="https://github.com/Mathbvb/Programming_lab_II/tree/main/Data%20Sctructures/Schularbeit%208%20(Stack%20using%20vector)">Stacks with vectors</a></p>
 <p>9 - <a href="https://github.com/Mathbvb/Programming_lab_II/tree/main/Data%20Sctructures/Schularbeit%209%20(queues%20using%20lists)">Queues with lists</a></p>
 <p>9 - <a href="https://github.com/Mathbvb/Programming_lab_II/tree/main/Data%20Sctructures/Schularbeit%209%20(queues%20using%20vector)">Queues with vectors</a></p>
+<p>10 - <a href="https://github.com/Mathbvb/Programming_lab_II/tree/main/Data%20Sctructures/Schularbeit%2010">Binary trees</a></p>
 
 <p>NULL - <a href="https://github.com/Mathbvb/Programming_lab_II/tree/main/Data%20Sctructures/Test%201">Exercises that I did to study for the test</a></p>
 
