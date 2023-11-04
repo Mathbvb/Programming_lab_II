@@ -12,7 +12,7 @@ int main(){
     Tree* g = create_tree(7, i, create_tree_null());
     Tree* e = create_tree(5, g, create_tree_null());
     Tree* d = create_tree(4, e, f);
-    Tree* c = create_tree(3, d, create_tree_null());
+    Tree* c = create_tree(1, d, create_tree_null());
     Tree* b = create_tree(2, create_tree_null(), c);
     Tree* a = create_tree(1, create_tree_null(), b);
 
